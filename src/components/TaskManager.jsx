@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TaskCard from "./TaskCard";
-
+import { Link } from "react-router-dom";
 
 const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
@@ -8,12 +8,12 @@ const TaskManager = () => {
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [newTaskDescription, setNewTaskDescription] = useState("");
 
-  const [updatedTaskTitle, setUpdatedTaskTitle] = useState('');
-  const [updatedTaskDescription, setUpdatedTaskDescription] = useState('');
+  const [updatedTaskTitle, setUpdatedTaskTitle] = useState("");
+  const [updatedTaskDescription, setUpdatedTaskDescription] = useState("");
 
   const addTask = () => {
     const newTask = {
-      id: Math.floor((Math.random() * 1000) + 1),
+      id: Math.floor(Math.random() * 1000 + 1),
       title: newTaskTitle,
       description: newTaskDescription,
     };
@@ -114,6 +114,11 @@ const TaskManager = () => {
           editTask={editTask}
         />
       ))}
+      <div className="text-center">
+        <button className="bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Link to="/">Back</Link>
+        </button>
+      </div>
     </div>
   );
 };
