@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TextBox() {
+const TextBox = () => {
   const [textBoxes, setTextBoxes] = useState([{ id: 1, value: "" }]);
 
   const handleAddTextBox = () => {
@@ -34,7 +34,7 @@ function TextBox() {
   return (
     <div className="container mx-auto p-4 text-center ">
       <h1 className="text-2xl font-bold pt-8 pb-2 mb-8 border-b-2 border-black">
-        Task Counter App
+        Text Box Counter App
       </h1>
       {textBoxes.map((textBox) => (
         <div key={textBox.id} className="mb-4">
